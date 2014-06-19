@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+import konch
+
+import requests
+import simplejson as json
+import click
+
+
+# TODO: Edit me
+# Available options: 'context', 'banner', 'shell', 'prompt', 'hide_context'
+konch.config({
+    'context': {
+        'speak': konch.speak,
+        'rget': requests.get,
+        'rpost': requests.post,
+        'dump': json.dump,
+        'load': json.load
+    },
+    'prompt': '>>> '
+})
