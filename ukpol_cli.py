@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
 import requests
 import click
 from click import echo, style
@@ -119,8 +120,17 @@ def get_area_from_postcode(postcode):
 
 
 def get_coords_from_postcode(postcode):
-    requrl = '%s%s.json' % (POSTCODEURL, postcode)
-    loc = requests.get(requrl).json()['geo']
+    try:
+        requrl = '%s%s.json' % (POSTCODEURL, postcode)
+        loc = requests.get(requrl).json()['geo']
+    except KeyError:
+        echo(
+            style(
+                "Location not found - please make sure postcodes are entered in full without a space",
+                fg='red'
+            )
+        )
+        sys.exit(0)
     return loc
 
 
