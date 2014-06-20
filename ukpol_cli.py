@@ -41,8 +41,8 @@ def area(postcode):
     areainfo = get_area_info(force, area)
 
     echo(
-        style("%s is covered by %s Constabulary" % (
-            style(postcode, bold=True), style(format_force(force), fg='blue')
+        style("%s is covered by %s" % (
+            style(postcode, bold=True), style(format_force(force+'Constabulary'), fg='blue')
         ))
     )
 
@@ -76,7 +76,7 @@ def force(postcode):
     fi = get_force_info(force)
     format_info_line('Telephone', fi['telephone'])
     format_info_line('Website', fi['url'])
-    format_info_line('Description', fi['description'])
+    #format_info_line('Description', fi['description']) rarely any have one
     print_engagement_methods(fi['engagement_methods'])
 
 
