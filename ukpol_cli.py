@@ -80,6 +80,12 @@ def force(postcode):
     print_engagement_methods(fi['engagement_methods'])
 
 
+@cli.command()
+@cli.argument('postcode')
+def crime(postcode):
+    pass
+
+
 def format_info_line(title, info):
     try:
         echo(
