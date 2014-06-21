@@ -37,7 +37,7 @@ def cli():
 @click.argument('postcode')
 def area(postcode):
     force, area = get_area_from_postcode(postcode)
-
+    print("")
     areainfo = get_area_info(force, area)
 
     echo(
@@ -107,6 +107,7 @@ def format_force(name):
 
 
 def output_header(header):
+    print("")
     echo(style(header, bold=True, fg='blue'))
     echo(('*') * len(header))
 
