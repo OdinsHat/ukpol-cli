@@ -42,7 +42,7 @@ def area(postcode):
 
     echo(
         style("%s is covered by %s" % (
-            style(postcode, bold=True), style(format_force(force+'Constabulary'), fg='blue')
+            style(postcode, fg='green'), style(format_force("%s %s" % (force, 'Constabulary')), fg='blue')
         ))
     )
 
