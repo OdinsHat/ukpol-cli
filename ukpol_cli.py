@@ -81,9 +81,14 @@ def force(postcode):
 
 
 @cli.command()
-@cli.argument('postcode')
-def crime(postcode):
-    pass
+@click.argument('postcode')
+@click.option(
+    '--date',
+    help='Optional. (YYYYMM) Limit results to a specific month.'
+)
+def crime(postcode, date=None):
+    loc = get_coords_from_postcode(postcode)
+
 
 
 def format_info_line(title, info):
