@@ -65,7 +65,7 @@ def contact(postcode):
 
 @cli.command()
 @click.argument('postcode')
-def force(postcode):
+@click.option('--list', default=False)
     force, area = get_area_from_postcode(postcode)
     echo(
         style("%s is covered by %s Constabulary" % (
