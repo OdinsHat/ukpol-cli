@@ -88,7 +88,7 @@ def contact(postcode):
 )
 def crime(postcode, date=None):
     loc = get_coords_from_postcode(postcode)
-
+    pass
 
 
 def format_info_line(title, info):
