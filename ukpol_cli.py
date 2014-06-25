@@ -90,7 +90,7 @@ def force(postcode):
 def crime(postcode, date=None):
     loc = get_coords_from_postcode(postcode)
     crimes = street_level_crimes(loc['lat'], loc['lng'], date)
-    pprint.pprint(crimes)
+    print_crimes_info(crimes)
 
 
 def street_level_crimes(lat, lng, crimedate=None):
@@ -180,6 +180,27 @@ def get_area_from_coords(loc):
 
 
 # Print functions
+
+def print_crimes_info(crimes):
+    for crime in crimes:
+        try:
+            echo("%s%s%s" % (
+                style(
+                    format_data_title(crime['category'].ljust(25)),
+                    fg='red'
+                ),
+                style(
+                    format_data_title(crime['month'].ljust(10)),
+                    fg='blue'
+                ),
+                style(
+                    format_data_title(crime['location']['street']['name'].ljust(30))
+                )
+            ))
+        except TypeError:
+            print('Somethign went wrong')
+            print(crime['category'])
+
 
 def print_contact_info(details):
     tel = False
