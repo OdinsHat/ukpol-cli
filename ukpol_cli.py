@@ -102,10 +102,11 @@ def street_level_crimes(lat, lng, crimedate=None):
         str(lng)
     ])
     if crimedate:
-        req_url = "%s&date=%s" % (req_url, crimedate)
+        req_url = "%s&date=%s-%s" % (req_url, crimedate[0:4], crimedate[4:6])
 
     resp = requests.get(req_url).json()
     return resp
+
 
 def area_level_crime(lat, lng, crimedate=None):
     pass
