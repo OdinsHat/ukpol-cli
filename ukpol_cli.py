@@ -89,6 +89,25 @@ def force(postcode):
 )
 def crime(postcode, date=None):
     loc = get_coords_from_postcode(postcode)
+    crimes = street_level_crimes(loc['lat'], loc['lng'], date)
+    pprint.pprint(crimes)
+
+
+def street_level_crimes(lat, lng, crimedate=None):
+    req_url = ''.join([
+        POLICEAPI,
+        'crimes-street/all-crime?lat=',
+        str(lat),
+        '&lng=',
+        str(lng)
+    ])
+    if crimedate:
+        req_url = "%s&date=%s" % (req_url, crimedate)
+
+    resp = requests.get(req_url).json()
+    return resp
+
+def area_level_crime(lat, lng, crimedate=None):
     pass
 
 
