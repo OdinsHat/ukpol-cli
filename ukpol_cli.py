@@ -42,7 +42,7 @@ def area(postcode):
 
     echo(
         style("%s is covered by %s" % (
-            style(postcode, fg='green'), style(format_force("%s %s" % (force, 'Constabulary')), fg='blue')
+            style(postcode, fg='green'), style(format_data_title("%s %s" % (force, 'Constabulary')), fg='blue')
         ))
     )
 
@@ -59,7 +59,7 @@ def contact(postcode):
     force, area = get_area_from_postcode(postcode)
     areainfo = get_area_info(force, area)
 
-    output_header("Contact Info for %s" % format_force(force))
+    output_header("Contact Info for %s" % format_data_title(force))
     print_contact_info(areainfo['contact_details'])
 
 
@@ -70,7 +70,7 @@ def force(postcode):
     force, area = get_area_from_postcode(postcode)
     echo(
         style("%s is covered by %s Constabulary" % (
-            style(postcode, bold=True), style(format_force(force), fg='blue')
+            style(postcode, bold=True), style(format_data_title(force), fg='blue')
         ))
     )
 
@@ -133,7 +133,7 @@ def get_force_info(force):
 # Print util functions
 
 
-def format_force(name):
+def format_data_title(name):
     return name.replace('-', ' ').title()
 
 
