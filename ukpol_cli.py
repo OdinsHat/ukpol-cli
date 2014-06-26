@@ -88,7 +88,7 @@ def force(postcode):
     '--date',
     help='Optional. (YYYYMM) Limit results to a specific month.'
 )
-def crime(postcode, date=None):
+def crimes(postcode, date=None):
     loc = get_coords_from_postcode(postcode)
     crimes = street_level_crimes(loc['lat'], loc['lng'], date)
     print_crimes_info(crimes)
