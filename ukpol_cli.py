@@ -26,6 +26,7 @@ def cli():
         ukpol area B610PL
         ukpol force SK224PL
         ukpol contact PE227DB
+        ukpol crimes B458ES
     \b
     Do not put a space inside the postcode!
     To get help with a subcommand, add the --help option after the command.
