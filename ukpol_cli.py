@@ -136,6 +136,7 @@ def get_force_info(force):
 
 
 def format_data_title(name):
+    """Fromats key values by removing hyphes and title() the string"""
     return name.replace('-', ' ').title()
 
 
@@ -154,6 +155,7 @@ def get_area_from_postcode(postcode):
 
 
 def get_coords_from_postcode(postcode):
+    """Using UK Postcodes API get the lat/lng coordinates of a given postcode"""
     try:
         requrl = '%s%s.json' % (POSTCODEURL, postcode)
         loc = requests.get(requrl).json()['geo']
@@ -169,6 +171,8 @@ def get_coords_from_postcode(postcode):
 
 
 def get_area_from_coords(loc):
+    """Using the Police API make a call to 'locate-neighbourhood' to get the
+    force and neghbourhood that cover that area"""
     req_url = ''.join([
         POLICEAPI,
         'locate-neighbourhood?q=',
@@ -184,6 +188,7 @@ def get_area_from_coords(loc):
 # Print functions
 
 def print_crimes_info(crimes):
+    """Given a dicttionary of crimes print out the info as a list"""
     for crime in crimes:
         try:
             echo("%s%s%s" % (
@@ -205,6 +210,7 @@ def print_crimes_info(crimes):
 
 
 def print_contact_info(details):
+    """Given a dictionary of the detals print out the contact info in column list format"""
     tel = False
     for key, val in details.items():
         if key == 'telephone':
