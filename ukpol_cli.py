@@ -12,6 +12,7 @@ POLICEAPI = 'http://data.police.uk/api/'
 
 __version__ = "0.0.1"
 __author__ = "Doug Bromley"
+__email__ = "doug@tintophat.com"
 __license__ = "MIT"
 
 
