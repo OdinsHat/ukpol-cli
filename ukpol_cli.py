@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+ukpol is a CLI script for finding information about
+a local police force based on a given post code.
+"""
 
 import sys
 import requests
