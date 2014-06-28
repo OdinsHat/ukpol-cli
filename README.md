@@ -2,6 +2,8 @@
 
 A simple command line app for retrieving data on UK police forces and neighbourhoods.
 
+![Screenshot of ukpol](https://raw.githubusercontent.com/OdinsHat/ukpol-cli/master/screenshot.png)
+
 ### Usage
 
 The command has 3 main arguments all accepting a UK postcode without a space e.g. B458ES or SK224PL:
