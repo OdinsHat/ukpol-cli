@@ -10,10 +10,17 @@ The command has 3 main arguments all accepting a UK postcode without a space e.g
 * **area** - Tells you the covering force, contact info an description of force area.
 * **force** - more detailed information on the force in that area including outreach info.
 * **contact** - Basic contact info
+* **crimes** - Show a listing of crimes comitted in the area. An option --date parameter can be provided.
 
 ### Examples
 
-Coming soon...
+```ukpol area B610PL```
+
+![Area Example](https://raw.githubusercontent.com/OdinsHat/ukpol-cli/master/screenshot_area.png)
+
+```ukpol force SK224PL```
+
+![Force Example](https://raw.githubusercontent.com/OdinsHat/ukpol-cli/master/screenshot_force.png)
 
 
 ### Getting Help
