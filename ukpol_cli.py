@@ -71,7 +71,6 @@ def contact(postcode):
 
 @cli.command()
 @click.argument('postcode')
-@click.option('--list', default=False)
 def force(postcode):
     force, area = get_area_from_postcode(postcode)
     echo(
