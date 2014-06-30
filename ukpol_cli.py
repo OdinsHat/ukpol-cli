@@ -32,6 +32,8 @@ def cli():
         ukpol force SK224PL
         ukpol contact PE227DB
         ukpol crimes B458ES
+        ukpol crimes B458ES --date=201401
+
     \b
     Do not put a space inside the postcode!
     To get help with a subcommand, add the --help option after the command.
