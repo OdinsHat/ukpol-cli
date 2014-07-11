@@ -16,7 +16,7 @@ setup(
     name='ukpol-cli',
     version='0.0.2',
     description='A CLI tool for finding information on UK police forces and local crime information',
-    long_description=read('README.md'),
+    long_description=read('README.rst'),
     author='Doug Bromley',
     author_email='doug@tintophat.com',
     url='https://github.com/OdinsHat/ukpol-cli',
@@ -29,7 +29,6 @@ setup(
             "ukpol = ukpol_cli:cli"
         ]
     },
-    zip_safe=False,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
