@@ -21,7 +21,7 @@ setup(
     author_email='doug@tintophat.com',
     url='https://github.com/OdinsHat/ukpol-cli',
     download_url='https://github.com/OdinsHat/ukpol-cli/archive/master.zip',
-    reuires=REQUIRES,
+    requires=REQUIRES,
     license=read('LICENSE'),
     keywords='uk police force crime stats data information cli',
     py_modules=["ukpol_cli"],
