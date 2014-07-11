@@ -14,7 +14,7 @@ def read(fname):
 
 setup(
     name='ukpol-cli',
-    version='0.0.1',
+    version='0.0.2',
     description='A CLI tool for finding information on UK police forces and local crime information',
     long_description=read('README.md'),
     author='Doug Bromley',
