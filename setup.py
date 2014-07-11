@@ -3,7 +3,7 @@ from setuptools import setup
 
 REQUIRES = [
     'requests>=2.3.0',
-    'click>=2.0',
+    'click<3.0',
 ]
 
 
@@ -21,28 +21,30 @@ setup(
     author_email='doug@tintophat.com',
     url='https://github.com/OdinsHat/ukpol-cli',
     download_url='https://github.com/OdinsHat/ukpol-cli/archive/master.zip',
-    requires=REQUIRES,
+    install_requires=REQUIRES,
     license=read('LICENSE'),
-    keywords='uk police force crime stats data information cli',
     py_modules=["ukpol_cli"],
     entry_points={
         'console_scripts': [
             "ukpol = ukpol_cli:cli"
         ]
     },
+    zip_safe=False,
     classifiers=[
-        'License :: OSI Approved :: MIT License',
-        'Development Status :: 3 - Beta'
-        'Operating System :: OS Independent',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
-        'Natural Language :: English',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
         'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Topic :: Terminals',
+        'Environment :: Console',
         'Topic :: Utilities',
+        'Topic :: Terminals',
     ],
+    keywords='uk, police, force, crime, stats, data, information, cli',
 )
