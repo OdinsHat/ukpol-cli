@@ -9,7 +9,7 @@ neighbourhoods.
 Installation
 ~~~~~~~~~~~~
 
-`pip install ukpol-cli`
+``pip install ukpol-cli``
 
 Usage
 ~~~~~
