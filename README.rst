@@ -6,6 +6,11 @@ neighbourhoods.
 
 |Screenshot of ukpol|
 
+Installation
+~~~~~~~~~~~~
+
+`pip install ukpol-cli`
+
 Usage
 ~~~~~
 
