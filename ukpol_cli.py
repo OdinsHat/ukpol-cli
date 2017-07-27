@@ -61,7 +61,10 @@ def area(postcode):
     print_contact_info(areainfo['contact_details'])
 
     output_header("Description")
-    print_area_description(re.sub('<[^<]+?>', '', areainfo['description']))
+    try:
+        print_area_description(re.sub('<[^<]+?>', '', areainfo['description']))
+    except KeyError:
+        print('No Description for area')
 
 
 @cli.command()
