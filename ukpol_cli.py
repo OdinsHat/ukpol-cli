@@ -14,7 +14,7 @@ import re
 POSTCODEURL = 'http://api.postcodes.io/postcodes/'
 POLICEAPI = 'http://data.police.uk/api/'
 
-__version__ = "0.0.4"
+__version__ = "0.0.6"
 __author__ = "Doug Bromley"
 __email__ = "doug@tintophat.com"
 __license__ = "MIT"
