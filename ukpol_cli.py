@@ -139,8 +139,10 @@ def get_area_info(force, area):
     requrl = ''.join([POLICEAPI, force, '/', area])
     return requests.get(requrl).json()
 
-
 def get_force_info(force):
+    """
+    Given a force retrieve all info for that police force
+    """
     requrl = ''.join([POLICEAPI, 'forces/', force])
     return requests.get(requrl).json()
 
@@ -149,7 +151,7 @@ def get_force_info(force):
 
 
 def format_data_title(name):
-    """Fromats key values by removing hyphes and title() the string"""
+    """Formats key values by removing hyphes and title() the string"""
     return name.replace('-', ' ').title()
 
 
@@ -168,7 +170,10 @@ def get_area_from_postcode(postcode):
 
 
 def get_coords_from_postcode(postcode):
-    """Using UK Postcodes API get the lat/lng coordinates of a given postcode"""
+    """
+        Using UK Postcodes API (postcodes.io) get the lat/lng 
+        coordinates of a given postcode which are required by police API
+    """
     try:
         requrl = '%s%s' % (POSTCODEURL, postcode)
         result = requests.get(requrl).json()
