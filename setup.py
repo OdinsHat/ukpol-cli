@@ -22,7 +22,7 @@ setup(
     url='https://github.com/OdinsHat/ukpol-cli',
     download_url='https://github.com/OdinsHat/ukpol-cli/archive/master.zip',
     install_requires=REQUIRES,
-    license=read('LICENSE'),
+    license='MIT',
     py_modules=["ukpol_cli"],
     entry_points={
         'console_scripts': [
