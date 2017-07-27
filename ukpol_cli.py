@@ -54,6 +54,9 @@ def area(postcode):
         ))
     )
 
+    output_header("General Info")
+    print_general_info(areainfo)
+
     output_header("Contact Info")
     print_contact_info(areainfo['contact_details'])
 
@@ -230,6 +233,15 @@ def print_contact_info(details):
     if not tel:
         echo('%s: %s' % (style('Telephone'.ljust(10), fg='blue'), style('101'.ljust(10))))
 
+def print_general_info(details):
+    """
+    Given the specific force details print out the top level info as well 
+    as a lat long map linkk to Google for the centre of the forces location
+    """
+    echo('%s: %s' % (style('Website'.ljust(10), fg='blue'), (style(details['url_force'].ljust(20)))))
+    echo('%s: %s' % (style('Name'.ljust(10), fg='blue'), style(details['name'].ljust(20))))
+    map_url = 'https://www.google.com/maps/preview/@%s,%s,8z' % (details['centre']['latitude'], details['centre']['longitude'])
+    echo('%s: %s' % (style('Map'.ljust(10), fg='blue'), style(map_url.ljust(20))))
 
 def print_area_description(desc):
     if desc:
