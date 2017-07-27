@@ -11,7 +11,7 @@ import click
 from click import echo, style
 import re
 
-POSTCODEURL = 'http://uk-postcodes.com/postcode/'
+POSTCODEURL = 'http://api.postcodes.io/postcodes/'
 POLICEAPI = 'http://data.police.uk/api/'
 
 __version__ = "0.0.4"
@@ -164,8 +164,9 @@ def get_area_from_postcode(postcode):
 def get_coords_from_postcode(postcode):
     """Using UK Postcodes API get the lat/lng coordinates of a given postcode"""
     try:
-        requrl = '%s%s.json' % (POSTCODEURL, postcode)
-        loc = requests.get(requrl).json()['geo']
+        requrl = '%s%s' % (POSTCODEURL, postcode)
+        result = requests.get(requrl).json()
+        loc = result['result']
     except KeyError:
         echo(
             style(
@@ -174,6 +175,8 @@ def get_coords_from_postcode(postcode):
             )
         )
         sys.exit(0)
+
+    loc = {'lat': loc['latitude'], 'lng': loc['longitude']}
     return loc
 
 
