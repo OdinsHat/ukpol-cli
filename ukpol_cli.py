@@ -124,8 +124,9 @@ def format_info_line(title, info):
         echo(
             '%s: %s' % (style(title.ljust(10), fg='blue'), style(info.ljust(10)))
         )
-    except AttributeError:
-        print title
+    except AttributeError as e:
+        print(e)
+        print(title)
 
 
 def get_area_info(force, area):
@@ -211,7 +212,7 @@ def print_crimes_info(crimes):
                 )
             ))
         except TypeError:
-            print('Somethign went wrong')
+            print('Something went wrong')
             print(crime['category'])
 
 
